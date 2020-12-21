@@ -1,0 +1,271 @@
+body{
+color:#555; /*se le agrega al boddy para todos los textos futuros y estan en gris clarito*/
+margin: 0;
+font-size: 20px;
+overflow-x: hidden;/*Elimina que en una animacion se salga de la pantalla,el scroll no aparece osea la pantalla blanca*/ 
+}
+/*MENU NAVEGACIÓN*/
+nav{
+	width: 100%; /*ocupa el 100% de la pantalla*/
+	height:50px;
+	background-color:#eee; 
+	overflow: hidden;
+	opacity: 0.8;
+	transition-duration: 0.6s;
+}
+nav:hover{
+	opacity: 1;
+}
+ul{
+ margin: 0;
+}
+
+li{
+float: left;
+width: 18%;
+color: #555;
+text-align: center; /* alinear texto en cada caja en su centro*/
+list-style: none; /*elimina los puntos de la lista*/
+margin-top:-30px; /*suma 30 pixeles hacia arriba en este caso oculta los iconos*/				
+transition-duration: 0.6s;/*tiempo de animasión*/}
+li:hover{
+	margin-top: 15px; /*bajan los iconos cuando apoyo el mouse*/
+}
+.ico{
+	width: 40px;
+	height: 40px; 
+}
+.capa-ico{
+	width: 100%;
+	height: 30px;
+	float: left;
+	text-align: center; /*texto alineado en el centro*/
+	padding:  5px 0 5px 0; /*position: */
+	cursor: pointer; /*cursos manito*/
+	position: relative;
+	top:-15px; /*suma 15 pixeles hacia arriba*/ 
+}
+
+nav + div{
+	width: 85%; /*ancho de 85 porciento de la pantalla*/
+	height: auto;/*automatico,ocupara lo que ocupe los elemento interiores*/
+	margin: 0 auto;/*mantener el elemento en el centro de la pantalla*/
+	border: 6px solid #999;
+	border-radius: 10px 80px 80px 10px;/*borde redondeado a la caja contenedora*/
+	background-color: #fff;
+	margin-top: 300px;
+	padding: 20px 5px 20px 5px;
+	text-align: justify; /*iguala texto borde dero e izquierdo*/
+	opacity: 0.9; /*pequeña transparencia*/
+	transition-duration: 0.70s; /*duracion de animación*/;
+}
+nav + div:hover{
+	background-color: #666;
+	color: #eee;
+	border-color: #eee;
+	opacity:1;
+}
+
+.img-pez{ /*pocisiono la imagen*/
+	width: 210px;
+	height: auto;
+	padding: 20px;
+	float: left;
+	text-align: center;
+}
+[src^="Img/Pez"]{/*todos los atributos src que comienzen con el valor especifico pez sera seleccionado*/
+width: 200px;
+height: 200px;
+float: left;
+border-radius: 150px; /*redondear imagen*/
+border:2px solid #999; /*borde 2px,estilo solido y gris clarito*/
+box-shadow: 5px 5px 8px #333; /*Sombra*/
+}
+
+.img-pez + div{
+	width: 65%;
+	height: auto;
+	margin: 0 0 30px 10px;
+	overflow: hidden;
+}
+#FondoMarino{
+	width: 100%;/*toda la pantalla*/
+	height: auto;
+	background-image: url(../Img/FondoMarino.jpg); /*direccion de imagen*/
+	background-size: 100% auto ; /*establesera el ancho y alto de la imagen asi se adapta al navegador*/
+	padding-bottom: 50px; /*margen abajo de la caja contenedora*/
+}
+#PezPortada{
+	width: 300px;
+	height: 300px;
+	background-image: url(../Img/PezPortada.png);
+	background-size: 300px 300px; 
+	position: absolute;/*posicion*/
+	top: 100px;/*donde se situa el pez */
+	left: 50px;/*donde se situa el pez*/
+	z-index: 50;  /*pongo el pez delante de la caja contenedora*/
+}
+#Algas{
+	width: 400px;
+	height: 280px;
+	background-image: url(../Img/Algas.png);
+	background-size: 400px 280px;
+	/*posicion*/
+	position:  absolute;
+	top: 70px;
+	right: 30%;
+	opacity: 0.5;
+}
+#Anzuelo{
+	width: 50px;
+	height: 150px;
+	background-image: url(../Img/Anzuelo.png);
+	background-size: 70px 150px;
+	position: fixed; /*la imagen queda fija en un sitio aunque bajemos o subimos*/
+	top: 0px;
+	right: 5%; 
+	z-index: 20; /*capa 20*/
+}
+#Anzuelo:hover{
+	margin-top: 20px; /*se separa 20 pixeles de la posicion actual*/
+	transition-duration: 0.5s;
+}
+#Burbuja1,#Burbuja2,#Burbuja3,#Burbuja4{
+	width: 30px;
+	height: 30px;
+	background-image: url(../Img/Burbuja.png);
+	background-size: 30px 30px;
+	position:absolute;
+	top: 330px;
+	right: 100px;
+	opacity: 0.3;
+	z-index: 20;
+}
+#Burbuja1{
+	animation-name: BUno; /*Nombre de la animación*/
+	animation-duration: 23s;/*duracion de la animacion*/
+	-webkit-animation-name:BUno; /*para ver en todos los navegadores*/
+	-webkit-animation-duration: 23s;/*para ver en todos los navegadores*/
+	animation-iteration-count: infinite; /*la animacion sigue indefinidamente*/
+}
+/*animacion en si*/
+@-webkit-keyframes BUno{
+	from{} /*inicio la animación*/
+	to{margin-top: -500px} /*fin de la animación / sale 500 px por fuera de la pantalla hacia arriba*/
+}
+
+#Burbuja2{
+	animation-name: BDos; 
+	animation-duration: 15s;
+	-webkit-animation-name:BDos; 
+	-webkit-animation-duration: 15s;
+	animation-iteration-count: infinite; 
+}
+/*animacion en si*/
+@-webkit-keyframes BDos{
+	from{margin-right: 550px} /*se searar esos piceles */ 
+	to{margin-top: -500px; margin-right: 560px;} /*se desvia a la izquiera y sube para arriba */ 
+}
+
+#Burbuja3{
+	animation-name: BTres; /*Nombre de la animación*/
+	animation-duration: 33s;/*duracion de la animacion*/
+	-webkit-animation-name:BTres; /*para ver en todos los navegadores*/
+	-webkit-animation-duration: 33s;/*para ver en todos los navegadores*/
+	animation-iteration-count: infinite; /*la animacion sigue indefinidamente*/
+}
+/*animacion en si*/
+@-webkit-keyframes BTres{
+	from{margin-right: 190px} /*inicio la animación*/
+	to{margin-top: -500px; margin-right: 195px;} /*fin de la animación / sale 500 px por fuera de la pantalla hacia arriba*/
+}
+
+#Burbuja4{
+	animation-name: BCuatro; /*Nombre de la animación*/
+	animation-duration: 20s;/*duracion de la animacion*/
+	-webkit-animation-name:BCuatro; /*para ver en todos los navegadores*/
+	-webkit-animation-duration: 20s;/*para ver en todos los navegadores*/
+	animation-iteration-count: infinite; /*la animacion sigue indefinidamente*/
+}
+/*animacion en si*/
+@-webkit-keyframes BCuatro{
+	from{margin-right: 350px} /*inicio la animación*/
+	to{margin-top: -500px; margin-right: 350px;} /*fin de la animación / sale 500 px por fuera de la pantalla hacia arriba*/
+}
+#PezRayado, #PecesAtras,#BancoPecesLentos,#BancoPecesRapidos{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	background-size: 200px 200px;
+}
+#PezRayado{ /*Dimension de la imagen*/
+	background-image: url(../ImgPezRayado.png);
+	top: 100px;
+	z-index: 40;
+
+	-webkit-animation-name:PezRayado;
+	-webkit-animation-duration:100s;
+	animation-name:PezRayado;
+	animation-duration:100s;
+	animation-iteration-count: infinite;
+}
+@-webkit-keyframes PezRayado{
+	from{margin-left: -200px;} /*esconder pez a la izquierda*/
+	to{margin-left: 2200px;} /*sale escondido de la izquierda hacia la derecha
+	*/
+}
+
+#PecesAtras{ /*Dimension de la imagen*/
+	background-image: url(../Img/PecesAtras.png);
+	top: 50px;
+	z-index: 1;
+
+	-webkit-animation-name:PecesAtras;
+	-webkit-animation-duration:100s;
+	animation-name:PecesAtras;
+	animation-duration:100s;
+	animation-iteration-count: infinite;
+}
+@-webkit-keyframes PecesAtras{
+	from{margin-left: -200px;} /*esconder pez a la izquierda*/
+	to{margin-left: 1200px;} /*sale escondido de la izquierda hacia la derecha
+	al ser la distancia mas corta,iran mas lento a su destino*/
+	
+}
+#BancoPecesRapidos{
+	width: 40%;
+	height: 200px;
+	background-image: url(../Img/BancoPecesRapidos.png);
+	background-size: 100% 200px;
+	z-index: 0;
+	top:90px;
+	left: 1300px;
+	-webkit-animation-name:BancoPecesRapidos;
+	-webkit-animation-duration:20s;
+	animation-name:BancoPecesRapidos;
+	animation-duration:20s;
+	animation-iteration-count: infinite;
+}
+@-webkit-keyframes BancoPecesRapidos{
+	from{margin-left: 2000px;}
+	to{margin-left: -4000px;}
+}
+
+#BancoPecesLentos{
+	width: 40%;
+	height: 250px;
+	background-image: url(../Img/BancoPecesLentos.png);
+	background-size: 100% 200px;
+	z-index: 0;
+	top:50px;
+	left: 1300px;
+	-webkit-animation-name:BancoPecesLentos;
+	-webkit-animation-duration:20s;
+	animation-name:BancoPecesLentos;
+	animation-duration:60s;
+	animation-iteration-count: infinite;
+}
+@-webkit-keyframes BancoPecesLentos{
+	from{margin-left: 20px;}
+	to{margin-left: -3000px;}
+}
